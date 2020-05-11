@@ -7,32 +7,32 @@ ReportDefinitions:
   - name: localityname
     label: report.prscp.localityname
     type: string
-    source: prscp
+    source: prscp-services
     total: false
   - name: totalevents
     label: report.prscp.totalevents
     type: string
-    source: prscp
+    source: prscp-services
     total: false
   - name: ongoingevents
     label: report.prscp.ongoingevents
     type: string
-    source: prscp
+    source: prscp-services
     total: false
   - name: upcommingevents
     label: report.prscp.upcommingevents
     type: string
-    source: prscp
+    source: prscp-services
     total: false
   - name: closedevents
     label: report.prscp.closedevents
     type: string
-    source: prscp
+    source: prscp-services
     total: false
   - name: archivedevnets
     label: report.prscp.archivedevnets
     type: string
-    source: prscp
+    source: prscp-services
     total: false
   additionalConfig:
     reportTitle: reports.prscp.MISSummaryReport.title
