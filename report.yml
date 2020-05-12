@@ -87,8 +87,8 @@ ReportDefinitions:
   version: 1.0.0
   moduleName: prscp-services
   sourceColumns:
-  - name: eventtype
-    label: report.prscp.eventtype
+  - name: departmentname
+    label: report.prscp.departmentname
     type: string
     source: prscp-services
     total: false
@@ -136,8 +136,8 @@ ReportDefinitions:
   version: 1.0.0
   moduleName: prscp-services
   sourceColumns:
-  - name: departmentname
-    label: report.prscp.departmentname
+  - name: eventtype
+    label: report.prscp.eventtype
     type: string
     source: prscp-services
     total: false
