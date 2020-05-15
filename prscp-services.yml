@@ -9,8 +9,8 @@ ServiceMaps:
       type: tender
       id: $.tenderNoticeUuid, $.tenantId
       isBulk: true
-      timeStampField: $.RequestBody.createdTime
-      jsonPath: $.RequestBody
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody
       
   - topic: update-tl-tradelicense
     configKey: INDEX
