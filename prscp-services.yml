@@ -1,0 +1,23 @@
+ServiceMaps:
+ serviceName: PR SCP Module
+ version: 1.0.0
+ mappings:
+  - topic: create-tender-notice
+    configKey: INDEX
+    indexes:
+    - name: tendernotice-v1
+      type: tender
+      id: $.tenderNoticeUuid, $.tenantId
+      isBulk: true
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
+      
+  - topic: update-tl-tradelicense
+    configKey: INDEX
+    indexes:
+    - name: tradelicense-v1
+      type: licenses
+      id: $.id, $.tenantId
+      isBulk: true
+      timeStampField: $.auditDetails.createdTime
+      jsonPath: $.Licenses
