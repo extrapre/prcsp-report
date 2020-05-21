@@ -29,7 +29,7 @@ ReportDefinitions:
     type: string
     source: prscp-services
     total: false
-  - name: archivedevnets
+  - name: cancelledevnets
     label: report.prscp.cancelledevnets
     type: string
     source: prscp-services
