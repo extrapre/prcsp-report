@@ -68,8 +68,8 @@ ReportDefinitions:
     type: string
     source: prscp-services
     total: false
-  - name: archivedevnets
-    label: report.prscp.archivedevnets
+  - name: cancelledevnets
+    label: report.prscp.cancelledevnets
     type: string
     source: prscp-services
     total: false
@@ -122,8 +122,8 @@ ReportDefinitions:
     type: string
     source: prscp-services
     total: false
-  - name: archivedevnets
-    label: report.prscp.archivedevnets
+  - name: cancelledevnets
+    label: report.prscp.cancelledevnets
     type: string
     source: prscp-services
     total: false
@@ -171,8 +171,8 @@ ReportDefinitions:
     type: string
     source: prscp-services
     total: false
-  - name: archivedevnets
-    label: report.prscp.archivedevnets
+  - name: cancelledevnets
+    label: report.prscp.cancelledevnets
     type: string
     source: prscp-services
     total: false
