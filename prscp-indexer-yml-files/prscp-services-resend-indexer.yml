@@ -9,5 +9,5 @@ ServiceMaps:
       type: persister-notification-resend-transitions
       id: $.notificationResendUuid, $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
