@@ -9,5 +9,5 @@ ServiceMaps:
       type: device-source
       id: $.sourceUuid, $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
