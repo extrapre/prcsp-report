@@ -9,8 +9,8 @@ ServiceMaps:
       type: event-committee
       id: $.committeeUuid , $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
 
   - topic: prscp-services-update-committee
     configKey: INDEX
@@ -19,5 +19,5 @@ ServiceMaps:
       type: event-committee
       id: $.committeeUuid, $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
