@@ -9,8 +9,8 @@ ServiceMaps:
       type: tender
       id: $.tenderNoticeUuid,$.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
       
   - topic: prscp-services-update-tender-notice
     configKey: INDEX
@@ -19,8 +19,8 @@ ServiceMaps:
       type: tender
       id:  $.tenderNoticeUuid,$.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
 
  - topic: prscp-services-update-tender-notice-template
     configKey: INDEX
@@ -29,8 +29,8 @@ ServiceMaps:
       type: tender
       id:  $.notificationTemplateUuid , $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
   
  - topic: prscp-services-update-tender-notice-publish
     configKey: INDEX
@@ -39,8 +39,8 @@ ServiceMaps:
       type: tender
       id:  $.notificationTemplateUuid $.tenderNoticeUuid, $.tenantId
   	  isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
   
   - topic: prscp-services-save-tender-notice-map-press
     configKey: INDEX
@@ -49,6 +49,6 @@ ServiceMaps:
       type: tender
       id:  $.tenderNoticeUuid , $.tenantId
   	  isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
   
