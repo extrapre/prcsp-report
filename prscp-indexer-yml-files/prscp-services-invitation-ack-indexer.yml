@@ -9,8 +9,8 @@ ServiceMaps:
       type: acknowledgement
       id: $.pressNoteUuid, , $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
       
   - topic: prscp-services-update-tender-sent-guest-acknowledgement
     configKey: INDEX
@@ -19,8 +19,8 @@ ServiceMaps:
       type: acknowledgement
       id:  $.tenderNoticeUuid , $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
 
  - topic: prscp-services-update-events-sent-guest-acknowledgement
     configKey: INDEX
@@ -29,8 +29,8 @@ ServiceMaps:
       type: acknowledgement
       id:  $.eventDetailUuid , $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
   
   - topic: prscp-services-save-invitations-resent-history
     configKey: INDEX
@@ -39,5 +39,5 @@ ServiceMaps:
       type: invitations
       id: $.notificationResendUuid, $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
