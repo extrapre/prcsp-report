@@ -9,8 +9,8 @@ ServiceMaps:
       type: prscp-services-event
       id: $.eventDetailUuid, $.eventId , $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
    
 
   - topic: prscp-services-update-event-detail
@@ -20,8 +20,8 @@ ServiceMaps:
       type: prscp-services-event
       id: $.eventDetailUuid, $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
 
 
   - topic: prscp-services-update-event-status
@@ -31,5 +31,5 @@ ServiceMaps:
       type: prscp-services-event
       id: $.eventDetailUuid, $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody      
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody      
