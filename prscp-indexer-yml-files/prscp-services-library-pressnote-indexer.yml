@@ -9,8 +9,8 @@ ServiceMaps:
       type: library
       id: $.libraryUuid, , $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
       
   - topic: prscp-services-save-pressnote-topic
     configKey: INDEX
@@ -19,8 +19,8 @@ ServiceMaps:
       type: press-note
       id:  $.pressNoteUuid , $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
       
   - topic: prscp-services-update-pressnote-topic
     configKey: INDEX
@@ -29,5 +29,5 @@ ServiceMaps:
       type: press-note
       id:  $.pressNoteUuid , $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody      
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody      
