@@ -1,0 +1,33 @@
+ServiceMaps:
+ serviceName: Public Relation and Sport Culture Program
+ version: 1.0.0
+ mappings:
+  - topic: prscp-services-save-library
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-library-index-v1
+      type: library
+      id: $.libraryUuid, , $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody
+      
+  - topic: prscp-services-save-pressnote-topic
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-pressnote-topic-index-v1
+      type: press-note
+      id:  $.pressNoteUuid , $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody
+      
+  - topic: prscp-services-update-pressnote-topic
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-pressnote-topic-index-v1
+      type: press-note
+      id:  $.pressNoteUuid , $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody      

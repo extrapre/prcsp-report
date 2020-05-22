@@ -1,0 +1,35 @@
+ServiceMaps:
+ serviceName: Public Relation and Sport Culture Program
+ version: 1.0.0
+ mappings:
+  - topic: prscp-services-save-event-detail
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-event-index-v1
+      type: prscp-services-event
+      id: $.eventDetailUuid, $.eventId , $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody
+   
+
+  - topic: prscp-services-update-event-detail
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-event-index-v1
+      type: prscp-services-event
+      id: $.eventDetailUuid, $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody
+
+
+  - topic: prscp-services-update-event-status
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-event-index-v1
+      type: prscp-services-event
+      id: $.eventDetailUuid, $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody      

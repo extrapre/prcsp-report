@@ -1,0 +1,43 @@
+ServiceMaps:
+ serviceName: Public Relation and Sport Culture Program
+ version: 1.0.0
+ mappings:
+  - topic: prscp-services-update-pressnote-sent-guest-acknowledgement
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-pressnote-sent-guest-acknowledgement-index-v1
+      type: acknowledgement
+      id: $.pressNoteUuid, , $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody
+      
+  - topic: prscp-services-update-tender-sent-guest-acknowledgement
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-tender-sent-guest-acknowledgement-index-v1
+      type: acknowledgement
+      id:  $.tenderNoticeUuid , $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody
+
+ - topic: prscp-services-update-events-sent-guest-acknowledgement
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-events-sent-guest-acknowledgement-index-v1
+      type: acknowledgement
+      id:  $.eventDetailUuid , $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody
+  
+  - topic: prscp-services-save-invitations-resent-history
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-invitations-resent-history-index-v1
+      type: invitations
+      id: $.notificationResendUuid, $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody

@@ -1,0 +1,54 @@
+ServiceMaps:
+ serviceName: Public Relation and Sport Culture Program
+ version: 1.0.0
+ mappings:
+  - topic: prscp-services-save-event-guest
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-event-guest-index-v1
+      type: event-guest
+      id: $.eventGuestUuid, $.eventDetailUuid , $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody
+      
+  - topic: prscp-services-update-event-template-guest
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-event-guest-index-v1
+      type: event-guest
+      id:  $.eventDetailUuid , $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody
+
+ - topic: prscp-services-save-event-template
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-event-template-index-v1
+      type: event-guest-template
+      id:  $.eventDetailUuid , $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody
+  
+  - topic: prscp-services-update-event-template
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-event-template-index-v1
+      type: event-guest-template
+      id: $.notificationTemplateUuid, $.eventDetailUuid , $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody           
+      
+  - topic: prscp-services-update-event-notification
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-event-notification-index-v1
+      type: event-invitation-notification
+      id: $.notificationTemplateUuid, $.eventDetailUuid , $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody     
+      

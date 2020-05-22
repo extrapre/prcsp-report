@@ -1,0 +1,23 @@
+ServiceMaps:
+ serviceName: Public Relation Service
+ version: 1.0.0
+ mappings:
+  - topic: prscp-services-save-pressmaster
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-pressmaster-index-v1
+      type: event-press-master
+      id: $.pressMasterUuid , $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody
+
+  - topic: prscp-services-update-pressmaster
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-update-pressmaster-index-v1
+      type: event-press-master
+      id: $.pressMasterUuid, $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody      

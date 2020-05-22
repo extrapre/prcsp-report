@@ -1,0 +1,13 @@
+ServiceMaps:
+ serviceName: Public Relation and Sport Culture Program
+ version: 1.0.0
+ mappings:
+  - topic: persister-notification-resend-transitions
+    configKey: INDEX
+    indexes:
+    - name: persister-notification-resend-transitions-index-v1
+      type: persister-notification-resend-transitions
+      id: $.notificationResendUuid, $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody

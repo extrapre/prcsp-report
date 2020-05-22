@@ -1,0 +1,23 @@
+ServiceMaps:
+ serviceName: Public Relation Service
+ version: 1.0.0
+ mappings:
+  - topic:  prscp-services-save-committee
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-committee-index-v1
+      type: event-committee
+      id: $.committeeUuid , $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody
+
+  - topic: prscp-services-update-committee
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-committee-index-v1
+      type: event-committee
+      id: $.committeeUuid, $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody

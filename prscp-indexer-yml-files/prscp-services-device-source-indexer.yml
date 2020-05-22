@@ -1,0 +1,13 @@
+ServiceMaps:
+ serviceName: Public Relation and Sport Culture Program
+ version: 1.0.0
+ mappings:
+  - topic: prscp-services-save-device-detail
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-device-detail-index-v1
+      type: device-source
+      id: $.sourceUuid, $.tenantId
+      isBulk: true
+      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
+      jsonPath: $.RequestInfoWrapper.RequestBody
