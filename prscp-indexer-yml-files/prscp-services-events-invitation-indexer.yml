@@ -9,8 +9,8 @@ ServiceMaps:
       type: event-guest
       id: $.eventGuestUuid, $.eventDetailUuid , $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
       
   - topic: prscp-services-update-event-template-guest
     configKey: INDEX
@@ -19,8 +19,8 @@ ServiceMaps:
       type: event-guest
       id:  $.eventDetailUuid , $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
 
  - topic: prscp-services-save-event-template
     configKey: INDEX
@@ -29,8 +29,8 @@ ServiceMaps:
       type: event-guest-template
       id:  $.eventDetailUuid , $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
   
   - topic: prscp-services-update-event-template
     configKey: INDEX
@@ -39,8 +39,8 @@ ServiceMaps:
       type: event-guest-template
       id: $.notificationTemplateUuid, $.eventDetailUuid , $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody           
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody           
       
   - topic: prscp-services-update-event-notification
     configKey: INDEX
@@ -49,6 +49,6 @@ ServiceMaps:
       type: event-invitation-notification
       id: $.notificationTemplateUuid, $.eventDetailUuid , $.tenantId
       isBulk: true
-      timeStampField: $.RequestInfoWrapper.RequestBody.createdTime
-      jsonPath: $.RequestInfoWrapper.RequestBody     
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody     
       
