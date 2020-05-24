@@ -8,7 +8,7 @@ ServiceMaps:
     - name: prscp-services-pressmaster-index-v1
       type: event-press-master
       id: $.pressMasterUuid , $.tenantId
-      isBulk: true
+      isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
 
@@ -18,6 +18,6 @@ ServiceMaps:
     - name: prscp-services-update-pressmaster-index-v1
       type: event-press-master
       id: $.pressMasterUuid, $.tenantId
-      isBulk: true
+      isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody      
