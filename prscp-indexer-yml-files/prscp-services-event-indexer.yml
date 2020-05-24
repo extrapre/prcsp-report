@@ -8,7 +8,7 @@ ServiceMaps:
     - name: prscp-services-event-index-v1
       type: prscp-services-event
       id: $.eventDetailUuid, $.eventId , $.tenantId
-      isBulk: true
+      isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
    
@@ -19,7 +19,7 @@ ServiceMaps:
     - name: prscp-services-event-index-v1
       type: prscp-services-event
       id: $.eventDetailUuid, $.tenantId
-      isBulk: true
+      isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
 
