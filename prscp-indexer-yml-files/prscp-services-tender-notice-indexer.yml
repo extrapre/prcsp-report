@@ -1,5 +1,5 @@
 ServiceMaps:
- serviceName: Public Relation Service
+ serviceName: Public Relation and Sport Culture Program
  version: 1.0.0
  mappings:
   - topic: prscp-services-save-tender-notice
@@ -21,7 +21,7 @@ ServiceMaps:
       isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
-
+	  
  - topic: prscp-services-update-tender-notice-template
     configKey: INDEX
     indexes:
@@ -38,7 +38,7 @@ ServiceMaps:
     - name: prscp-services-tender-notice-publish-index-v1
       type: tender
       id:  $.notificationTemplateUuid $.tenderNoticeUuid, $.tenantId
-  	   isBulk: false
+  	  isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
   
@@ -48,7 +48,6 @@ ServiceMaps:
     - name: prscp-services-tender-notice-map-press-index-v1
       type: tender
       id:  $.tenderNoticeUuid , $.tenantId
-  	   isBulk: true
+  	  isBulk: true
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
-  
