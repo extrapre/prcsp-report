@@ -28,7 +28,7 @@ ServiceMaps:
     - name: prscp-services-event-template-index-v1
       type: event-guest-template
       id:  $.eventDetailUuid , $.tenantId
-      isBulk: true
+      isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
   
@@ -38,7 +38,7 @@ ServiceMaps:
     - name: prscp-services-event-template-index-v1
       type: event-guest-template
       id: $.notificationTemplateUuid, $.eventDetailUuid , $.tenantId
-      isBulk: true
+      isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody           
       
@@ -48,7 +48,7 @@ ServiceMaps:
     - name: prscp-services-event-notification-index-v1
       type: event-invitation-notification
       id: $.notificationTemplateUuid, $.eventDetailUuid , $.tenantId
-      isBulk: true
+      isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody     
       
