@@ -11,4 +11,3 @@ ServiceMaps:
       isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
-
