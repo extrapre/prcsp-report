@@ -27,7 +27,7 @@ ServiceMaps:
   - topic: prscp-services-update-event-status
     configKey: INDEX
     indexes:
-    - name: prscp-services-event-index-v1
+    - name: prscp-services-event-status-index-v1
       type: prscp-services-event
       id: $.eventDetailUuid, $.tenantId
       isBulk: true
