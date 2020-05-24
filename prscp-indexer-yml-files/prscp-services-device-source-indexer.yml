@@ -8,6 +8,6 @@ ServiceMaps:
     - name: prscp-services-device-detail-index-v1
       type: device-source
       id: $.sourceUuid, $.tenantId
-      isBulk: true
+      isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
