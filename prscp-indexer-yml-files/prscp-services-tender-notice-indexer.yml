@@ -11,3 +11,13 @@ ServiceMaps:
       isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
+
+- topic: prscp-services-update-tender-notice
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-tender-notice-index-v1
+      type: tender
+      id:  $.tenderNoticeUuid,$.tenantId
+      isBulk: false
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
