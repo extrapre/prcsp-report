@@ -2,22 +2,52 @@ ServiceMaps:
  serviceName: Public Relation Service
  version: 1.0.0
  mappings:
-  - topic: prscp-services-save-pressmaster
+  - topic: prscp-services-save-tender-notice
     configKey: INDEX
     indexes:
-    - name: prscp-services-pressmaster-index-v1
-      type: event-press-master
-      id: $.pressMasterUuid , $.tenantId
+    - name: prscp-services-tender-notice-index-v1
+      type: tender
+      id: $.tenderNoticeUuid,$.tenantId
       isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
 
-  - topic: prscp-services-update-pressmaster
+  - topic: prscp-services-update-tender-notice
     configKey: INDEX
     indexes:
-    - name: prscp-services-update-pressmaster-index-v1
-      type: event-press-master
-      id: $.pressMasterUuid, $.tenantId
+    - name: prscp-services-tender-notice-index-v1
+      type: tender
+      id: $.tenderNoticeUuid,$.tenantId
+      isBulk: false
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
+
+  - topic: prscp-services-update-tender-notice-template
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-tender-notice-template-index-v1
+      type: tender
+      id: $.notificationTemplateUuid , $.tenantId
       isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody      
+ 
+  - topic: prscp-services-update-tender-notice-publish
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-tender-notice-publish-index-v1
+      type: tender
+      id: $.notificationTemplateUuid $.tenderNoticeUuid, $.tenantId
+      isBulk: false
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
+
+  - topic: prscp-services-save-tender-notice-map-press
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-tender-notice-map-press-index-v1
+      type: tender
+      id:  $.tenderNoticeUuid , $.tenantId
+      isBulk: true
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
