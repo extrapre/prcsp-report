@@ -18,7 +18,7 @@ ServiceMaps:
     - name: prscp-services-pressnote-topic-index-v1
       type: press-note
       id:  $.pressNoteUuid , $.tenantId
-      isBulk: true
+      isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
       
@@ -28,6 +28,6 @@ ServiceMaps:
     - name: prscp-services-pressnote-topic-index-v1
       type: press-note
       id:  $.pressNoteUuid , $.tenantId
-      isBulk: true
+      isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody      
