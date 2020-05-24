@@ -12,7 +12,7 @@ ServiceMaps:
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
 
-- topic: prscp-services-update-tender-notice
+  - topic: prscp-services-update-tender-notice
     configKey: INDEX
     indexes:
     - name: prscp-services-tender-notice-index-v1
