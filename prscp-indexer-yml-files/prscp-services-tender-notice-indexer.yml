@@ -11,8 +11,8 @@ ServiceMaps:
       isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
-      
-  - topic: prscp-services-update-tender-notice
+
+- topic: prscp-services-update-tender-notice
     configKey: INDEX
     indexes:
     - name: prscp-services-tender-notice-index-v1
@@ -21,7 +21,7 @@ ServiceMaps:
       isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
-	  
+
  - topic: prscp-services-update-tender-notice-template
     configKey: INDEX
     indexes:
@@ -31,7 +31,7 @@ ServiceMaps:
       isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
-  
+
  - topic: prscp-services-update-tender-notice-publish
     configKey: INDEX
     indexes:
@@ -41,7 +41,7 @@ ServiceMaps:
   	  isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
-  
+
   - topic: prscp-services-save-tender-notice-map-press
     configKey: INDEX
     indexes:
