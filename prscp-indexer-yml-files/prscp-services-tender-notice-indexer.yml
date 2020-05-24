@@ -8,7 +8,7 @@ ServiceMaps:
     - name: prscp-services-tender-notice-index-v1
       type: tender
       id: $.tenderNoticeUuid,$.tenantId
-      isBulk: true
+      isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
       
@@ -18,7 +18,7 @@ ServiceMaps:
     - name: prscp-services-tender-notice-index-v1
       type: tender
       id:  $.tenderNoticeUuid,$.tenantId
-      isBulk: true
+      isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
 
@@ -28,7 +28,7 @@ ServiceMaps:
     - name: prscp-services-tender-notice-template-index-v1
       type: tender
       id:  $.notificationTemplateUuid , $.tenantId
-      isBulk: true
+      isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
   
@@ -38,7 +38,7 @@ ServiceMaps:
     - name: prscp-services-tender-notice-publish-index-v1
       type: tender
       id:  $.notificationTemplateUuid $.tenderNoticeUuid, $.tenantId
-  	   isBulk: true
+  	   isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
   
