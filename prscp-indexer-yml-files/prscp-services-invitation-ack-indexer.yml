@@ -1,43 +1,43 @@
 ServiceMaps:
- serviceName: Public Relation and Sport Culture Program
+ serviceName: Public Relation Service
  version: 1.0.0
  mappings:
   - topic: prscp-services-update-pressnote-sent-guest-acknowledgement
     configKey: INDEX
     indexes:
     - name: prscp-services-pressnote-sent-guest-acknowledgement-index-v1
-      type: acknowledgement
-      id: $.pressNoteUuid, , $.tenantId
-      isBulk: false
-      timeStampField: $.RequestBody.createdTime
-      jsonPath: $.RequestBody
-      
-  - topic: prscp-services-update-tender-sent-guest-acknowledgement
-    configKey: INDEX
-    indexes:
-    - name: prscp-services-tender-sent-guest-acknowledgement-index-v1
-      type: acknowledgement
-      id:  $.tenderNoticeUuid , $.tenantId
+      type: guest-acknowledgement
+      id: $.pressNoteUuid,$.tenantId
       isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
 
- - topic: prscp-services-update-events-sent-guest-acknowledgement
+  - topic: prscp-services-update-tender-sent-guest-acknowledgement
+    configKey: INDEX
+    indexes:
+    - name: prscp-services-tender-sent-guest-acknowledgement-index-v1
+      type: guest-acknowledgement
+      id: $.tenderNoticeUuid,$.tenantId
+      isBulk: false
+      timeStampField: $.RequestBody.createdTime
+      jsonPath: $.RequestBody
+
+  - topic: prscp-services-update-events-sent-guest-acknowledgement
     configKey: INDEX
     indexes:
     - name: prscp-services-events-sent-guest-acknowledgement-index-v1
-      type: acknowledgement
-      id:  $.eventDetailUuid , $.tenantId
-      isBulk: true
+      type: guest-acknowledgement
+      id: $.eventDetailUuid , $.tenantId
+      isBulk: false
       timeStampField: $.RequestBody.createdTime
-      jsonPath: $.RequestBody
-  
+      jsonPath: $.RequestBody      
+ 
   - topic: prscp-services-save-invitations-resent-history
     configKey: INDEX
     indexes:
     - name: prscp-services-invitations-resent-history-index-v1
-      type: invitations
-      id: $.notificationResendUuid, $.tenantId
+      type: invitations-resent-history
+      id: $.notificationResendUuid , $.tenantId
       isBulk: true
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
