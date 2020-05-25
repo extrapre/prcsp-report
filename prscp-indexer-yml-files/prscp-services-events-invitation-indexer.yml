@@ -1,5 +1,5 @@
 ServiceMaps:
- serviceName: Public Relation and Sport Culture Program
+ serviceName: Public Relation Service
  version: 1.0.0
  mappings:
   - topic: prscp-services-save-event-guest
@@ -11,37 +11,37 @@ ServiceMaps:
       isBulk: true
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
-      
+
   - topic: prscp-services-update-event-template-guest
     configKey: INDEX
     indexes:
     - name: prscp-services-event-guest-index-v1
       type: event-guest
-      id:  $.eventDetailUuid , $.tenantId
+      id: $.eventDetailUuid , $.tenantId
       isBulk: true
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
 
- - topic: prscp-services-save-event-template
+  - topic: prscp-services-save-event-template
     configKey: INDEX
     indexes:
     - name: prscp-services-event-template-index-v1
-      type: event-guest-template
-      id:  $.eventDetailUuid , $.tenantId
+      type:  event-guest-template
+      id: $.eventDetailUuid , $.tenantId
       isBulk: false
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
-  
+
   - topic: prscp-services-update-event-template
     configKey: INDEX
     indexes:
     - name: prscp-services-event-template-index-v1
       type: event-guest-template
-      id: $.notificationTemplateUuid, $.eventDetailUuid , $.tenantId
+      id:  $.notificationTemplateUuid, $.eventDetailUuid , $.tenantId
       isBulk: false
       timeStampField: $.RequestBody.createdTime
-      jsonPath: $.RequestBody           
-      
+      jsonPath: $.RequestBody
+
   - topic: prscp-services-update-event-notification
     configKey: INDEX
     indexes:
@@ -50,5 +50,4 @@ ServiceMaps:
       id: $.notificationTemplateUuid, $.eventDetailUuid , $.tenantId
       isBulk: false
       timeStampField: $.RequestBody.createdTime
-      jsonPath: $.RequestBody     
-      
+      jsonPath: $.RequestBody
