@@ -28,7 +28,7 @@ ServiceMaps:
     - name: prscp-services-events-sent-guest-acknowledgement-index-v1
       type: guest-acknowledgement
       id: $.eventDetailUuid , $.tenantId
-      isBulk: false
+      isBulk: true
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody      
  
