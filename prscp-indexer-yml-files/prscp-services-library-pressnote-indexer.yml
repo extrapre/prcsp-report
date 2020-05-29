@@ -7,7 +7,7 @@ ServiceMaps:
     indexes:
     - name: prscp-services-library-index-v1
       type: library
-      id: $.libraryUuid, , $.tenantId
+      id: $.libraryUuid, $.tenantId
       isBulk: true
       timeStampField: $.RequestBody.createdTime
       jsonPath: $.RequestBody
