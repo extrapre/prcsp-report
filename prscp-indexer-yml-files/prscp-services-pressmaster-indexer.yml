@@ -15,7 +15,7 @@ ServiceMaps:
   - topic: prscp-services-update-pressmaster
     configKey: INDEX
     indexes:
-    - name: prscp-services-update-pressmaster-index-v1
+    - name: prscp-services-pressmaster-index-v1
       type: event-press-master
       id: $.pressMasterUuid, $.tenantId
       isBulk: false
