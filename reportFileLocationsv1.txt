@@ -1,2 +1,2 @@
-pm-services=https://raw.githubusercontent.com/extrapre/pwc-backend-repo/master/nocValidationJsonFile/report.yml
+pm-services=https://github.com/extrapre/pwc-backend-repo/blob/master/nocValidationJsonFile/pm-reports.yml
 prscp-services=https://raw.githubusercontent.com/PrakashRajHadgal/prcsp-report/master/report.yml
