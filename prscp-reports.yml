@@ -58,7 +58,7 @@ ReportDefinitions:
   additionalConfig:
     reportTitle: reports.prscp.MISSummaryReport.title
   query: select COALESCE(locality_name,'') AS localityname, count(1) totalevents, count(((TO_TIMESTAMP(to_char(CURRENT_TIMESTAMP, 'YYYY-MM-DD HH24:MI:SS'),'YYYY-MM-DD HH24:MI:SS') between TO_TIMESTAMP(concat(to_char(start_date, 'YYYY-MM-DD'),' ',start_time), 'YYYY-MM-DD HH24:MI:SS') and TO_TIMESTAMP(concat(to_char(end_date, 'YYYY-MM-DD'),' ',end_time), 'YYYY-MM-DD HH24:MI:SS')) and event_status<>'CANCELLED') or null) as ongoingevents, count((TO_TIMESTAMP(to_char(CURRENT_TIMESTAMP, 'YYYY-MM-DD HH24:MI:SS'),'YYYY-MM-DD HH24:MI:SS') < TO_TIMESTAMP(concat(to_char(start_date, 'YYYY-MM-DD'),' ',start_time), 'YYYY-MM-DD HH24:MI:SS') and event_status<>'CANCELLED') or null) as upcommingevents,count((TO_TIMESTAMP(to_char(CURRENT_TIMESTAMP, 'YYYY-MM-DD HH24:MI:SS'),'YYYY-MM-DD HH24:MI:SS') > TO_TIMESTAMP(concat(to_char(end_date, 'YYYY-MM-DD'),' ',end_time), 'YYYY-MM-DD HH24:MI:SS') and event_status<>'CANCELLED') or null) as closedevents, count(event_status='CANCELLED' or null) as cancelledevnets from egpr_event_detail where tenant_id=$tenantid and module_code='PR'
-  groupby: GROUP BY localityname
+  groupby: GROUP BY locality_name
   
 - reportName: MISNumberOfEventReportReport
   summary: Number of Event Report Department Wise report
