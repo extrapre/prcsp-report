@@ -40,13 +40,13 @@ ReportDefinitions:
     type: epoch
     source: prscp
     isMandatory: true
-    searchClause: AND DATE(to_char(TO_TIMESTAMP(created_time / 1000),'yyyy-mm-dd')) > DATE($fromDate)
+    searchClause: AND DATE(to_char(TO_TIMESTAMP(created_time / 1000),'yyyy-mm-dd')) > DATE(to_char(TO_TIMESTAMP($fromDate / 1000),'yyyy-mm-dd'))
   - name: toDate
     label: reports.prscp.toDate
     type: epoch
     source: prscp
     isMandatory: true
-    searchClause: AND DATE(to_char(TO_TIMESTAMP(created_time / 1000),'yyyy-mm-dd')) < DATE($toDate)
+    searchClause: AND DATE(to_char(TO_TIMESTAMP(created_time / 1000),'yyyy-mm-dd')) <  DATE(to_char(TO_TIMESTAMP($toDate / 1000),'yyyy-mm-dd'))
   - name: localityName
     label: localityName
     type: singlevaluelist
