@@ -38,20 +38,20 @@ ReportDefinitions:
   - name: fromDate
     label: reports.prscp.fromDate
     type: epoch
-    source: prscp
+    source: prscp-services
     isMandatory: true
     searchClause: AND DATE(to_char(TO_TIMESTAMP(created_time / 1000),'yyyy-mm-dd')) > DATE(to_char(TO_TIMESTAMP($fromDate / 1000),'yyyy-mm-dd'))
   - name: toDate
     label: reports.prscp.toDate
     type: epoch
-    source: prscp
+    source: prscp-services
     isMandatory: true
     searchClause: AND DATE(to_char(TO_TIMESTAMP(created_time / 1000),'yyyy-mm-dd')) <  DATE(to_char(TO_TIMESTAMP($toDate / 1000),'yyyy-mm-dd'))
   - name: localityName
     label: localityName
     type: singlevaluelist
     pattern: http://192.168.12.113:8094/egov-mdms-service/v1/_get?tenantId=ch&moduleName=RAINMAKER-PR&masterName=localityAreaName|$.MdmsRes.RAINMAKER-PR.localityAreaName.*.code|$.MdmsRes.RAINMAKER-PR.localityAreaName.*.name
-    source: prscp
+    source: prscp-services
     wrapper: true
     isMandatory: true
     searchClause: AND COALESCE(locality_name,'') = case when (Trim($localityName))<>'' then (Trim($localityName)) else COALESCE(locality_name,'') 
