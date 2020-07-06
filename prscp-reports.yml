@@ -50,7 +50,7 @@ ReportDefinitions:
   - name: localityName
     label: localityName
     type: singlevaluelist
-    pattern: http://192.168.12.113:8094/egov-mdms-service/v1/_get?tenantId=initcap(split_part($tenantid, '.', 2))&moduleName=RAINMAKER-PR&masterName=localityAreaName|$.MdmsRes.RAINMAKER-PR.localityAreaName.*.code|$.MdmsRes.RAINMAKER-PR.localityAreaName.*.name
+    pattern: http://192.168.12.113:8094/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=RAINMAKER-PR&masterName=localityAreaName|$.MdmsRes.RAINMAKER-PR.localityAreaName.*.code|$.MdmsRes.RAINMAKER-PR.localityAreaName.*.name
     source: prscp
     wrapper: true
     isMandatory: true
