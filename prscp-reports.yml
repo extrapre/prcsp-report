@@ -2,7 +2,7 @@ ReportDefinitions:
 - reportName: MISEventLocalityWiseReport
   summary: Locality Wise report
   version: 1.0.0
-  moduleName: prscp-services
+  moduleName: prscp
   sourceColumns:
   - name: localityname
     label: report.prscp.localityname
