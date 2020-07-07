@@ -5,53 +5,53 @@ ReportDefinitions:
   moduleName: prscp-services
   sourceColumns:
   - name: localityname
-    label: report.prscp-services.localityname
+    label: report.egpr_event_detail.localityname
     type: string
-    source: prscp-services
+    source: egpr_event_detail
     total: false
   - name: totalevents
-    label: report.prscp-services.totalevents
+    label: report.egpr_event_detail.totalevents
     type: string
-    source: prscp-services
+    source: egpr_event_detail
     total: false
   - name: ongoingevents
-    label: report.prscp-services.ongoingevents
+    label: report.egpr_event_detail.ongoingevents
     type: string
-    source: prscp-services
+    source: egpr_event_detail
     total: false
   - name: upcommingevents
-    label: report.prscp-services.upcommingevents
+    label: report.egpr_event_detail.upcommingevents
     type: string
-    source: prscp-services
+    source: egpr_event_detail
     total: false
   - name: closedevents
-    label: report.prscp-services.closedevents
+    label: report.egpr_event_detail.closedevents
     type: string
-    source: prscp-services
+    source: egpr_event_detail
     total: false
   - name: cancelledevnets
-    label: report.prscp-services.cancelledevnets
+    label: report.egpr_event_detail.cancelledevnets
     type: string
-    source: prscp-services
+    source: egpr_event_detail
     total: false
   searchParams:
   - name: fromDate
-    label: reports.prscp-services.fromDate
+    label: reports.egpr_event_detail.fromDate
     type: epoch
-    source: prscp-services
+    source: egpr_event_detail
     isMandatory: true
     searchClause: AND DATE(to_char(TO_TIMESTAMP(created_time / 1000),'yyyy-mm-dd')) > DATE(to_char(TO_TIMESTAMP($fromDate / 1000),'yyyy-mm-dd'))
   - name: toDate
-    label: reports.prscp-services.toDate
+    label: reports.egpr_event_detail.toDate
     type: epoch
-    source: prscp-services
+    source: egpr_event_detail
     isMandatory: true
     searchClause: AND DATE(to_char(TO_TIMESTAMP(created_time / 1000),'yyyy-mm-dd')) <  DATE(to_char(TO_TIMESTAMP($toDate / 1000),'yyyy-mm-dd'))
   - name: localityName
     label: localityName
     type: singlevaluelist
     pattern: http://192.168.12.113:8094/egov-mdms-service/v1/_get?tenantId=ch&moduleName=RAINMAKER-PR&masterName=localityAreaName|$.MdmsRes.RAINMAKER-PR.localityAreaName.*.name|$.MdmsRes.RAINMAKER-PR.localityAreaName.*.name
-    source: prscp-services
+    source: egpr_event_detail
     wrapper: true
     isMandatory: true
     searchClause: AND COALESCE(locality_name,'') = case when (Trim($localityName))<>'' then (Trim($localityName)) else COALESCE(locality_name,'') END
