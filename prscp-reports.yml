@@ -2,56 +2,56 @@ ReportDefinitions:
 - reportName: MISEventLocalityWiseReport
   summary: Locality Wise report
   version: 1.0.0
-  moduleName: prscp
+  moduleName: prscp-services
   sourceColumns:
   - name: localityname
-    label: report.prscp.localityname
+    label: report.prscp-services.localityname
     type: string
-    source: prscp
+    source: prscp-services
     total: false
   - name: totalevents
-    label: report.prscp.totalevents
+    label: report.prscp-services.totalevents
     type: string
-    source: prscp
+    source: prscp-services
     total: false
   - name: ongoingevents
-    label: report.prscp.ongoingevents
+    label: report.prscp-services.ongoingevents
     type: string
-    source: prscp
+    source: prscp-services
     total: false
   - name: upcommingevents
-    label: report.prscp.upcommingevents
+    label: report.prscp-services.upcommingevents
     type: string
-    source: prscp
+    source: prscp-services
     total: false
   - name: closedevents
-    label: report.prscp.closedevents
+    label: report.prscp-services.closedevents
     type: string
-    source: prscp
+    source: prscp-services
     total: false
   - name: cancelledevnets
-    label: report.prscp.cancelledevnets
+    label: report.prscp-services.cancelledevnets
     type: string
-    source: prscp
+    source: prscp-services
     total: false
   searchParams:
   - name: fromDate
-    label: reports.prscp.fromDate
+    label: reports.prscp-services.fromDate
     type: epoch
-    source: prscp
+    source: prscp-services
     isMandatory: true
     searchClause: AND DATE(to_char(TO_TIMESTAMP(created_time / 1000),'yyyy-mm-dd')) > DATE(to_char(TO_TIMESTAMP($fromDate / 1000),'yyyy-mm-dd'))
   - name: toDate
-    label: reports.prscp.toDate
+    label: reports.prscp-services.toDate
     type: epoch
-    source: prscp
+    source: prscp-services
     isMandatory: true
     searchClause: AND DATE(to_char(TO_TIMESTAMP(created_time / 1000),'yyyy-mm-dd')) <  DATE(to_char(TO_TIMESTAMP($toDate / 1000),'yyyy-mm-dd'))
   - name: localityName
     label: localityName
     type: singlevaluelist
     pattern: http://192.168.12.113:8094/egov-mdms-service/v1/_get?tenantId=ch&moduleName=RAINMAKER-PR&masterName=localityAreaName|$.MdmsRes.RAINMAKER-PR.localityAreaName.*.name|$.MdmsRes.RAINMAKER-PR.localityAreaName.*.name
-    source: prscp
+    source: prscp-services
     wrapper: true
     isMandatory: true
     searchClause: AND COALESCE(locality_name,'') = case when (Trim($localityName))<>'' then (Trim($localityName)) else COALESCE(locality_name,'') END
