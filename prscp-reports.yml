@@ -7,51 +7,51 @@ ReportDefinitions:
   - name: localityname
     label: report.prscp.localityname
     type: string
-    source: prscp-services
+    source: prscp
     total: false
   - name: totalevents
     label: report.prscp.totalevents
     type: string
-    source: prscp-services
+    source: prscp
     total: false
   - name: ongoingevents
     label: report.prscp.ongoingevents
     type: string
-    source: prscp-services
+    source: prscp
     total: false
   - name: upcommingevents
     label: report.prscp.upcommingevents
     type: string
-    source: prscp-services
+    source: prscp
     total: false
   - name: closedevents
     label: report.prscp.closedevents
     type: string
-    source: prscp-services
+    source: prscp
     total: false
   - name: cancelledevnets
     label: report.prscp.cancelledevnets
     type: string
-    source: prscp-services
+    source: prscp
     total: false
   searchParams:
   - name: fromDate
     label: reports.prscp.fromDate
     type: epoch
-    source: prscp-services
+    source: prscp
     isMandatory: true
     searchClause: AND DATE(to_char(TO_TIMESTAMP(created_time / 1000),'yyyy-mm-dd')) > DATE(to_char(TO_TIMESTAMP($fromDate / 1000),'yyyy-mm-dd'))
   - name: toDate
     label: reports.prscp.toDate
     type: epoch
-    source: prscp-services
+    source: prscp
     isMandatory: true
     searchClause: AND DATE(to_char(TO_TIMESTAMP(created_time / 1000),'yyyy-mm-dd')) <  DATE(to_char(TO_TIMESTAMP($toDate / 1000),'yyyy-mm-dd'))
   - name: localityName
     label: localityName
     type: singlevaluelist
     pattern: http://192.168.12.113:8094/egov-mdms-service/v1/_get?tenantId=ch&moduleName=RAINMAKER-PR&masterName=localityAreaName|$.MdmsRes.RAINMAKER-PR.localityAreaName.*.name|$.MdmsRes.RAINMAKER-PR.localityAreaName.*.name
-    source: prscp-services
+    source: prscp
     wrapper: true
     isMandatory: true
     searchClause: AND COALESCE(locality_name,'') = case when (Trim($localityName))<>'' then (Trim($localityName)) else COALESCE(locality_name,'') END
